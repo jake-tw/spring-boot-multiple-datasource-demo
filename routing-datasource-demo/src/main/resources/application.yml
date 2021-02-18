@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    main:
+      url: jdbc:mysql://127.0.0.1:3306/test?createDatabaseIfNotExist=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&autoReconnect=true
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+      test-while-idle: true
+      validation-query: SELECT 1
+    sub:
+      url: jdbc:mysql://127.0.0.1:3307/test?createDatabaseIfNotExist=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&autoReconnect=true
+      username: root
+      password: 123456 
+      driver-class-name: com.mysql.jdbc.Driver
+      test-while-idle: true
+      validation-query: SELECT 1
