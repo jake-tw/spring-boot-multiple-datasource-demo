@@ -4,7 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jake.demo.entity.Product;
@@ -12,16 +15,21 @@ import com.jake.demo.service.ProductService;
 
 import lombok.extern.slf4j.Slf4j;
 
-@RestController("/product")
-@Slf4j
+@RestController
+@RequestMapping("/product")
 public class ProductController {
 
     @Autowired
     private ProductService productService;
 
-    @GetMapping
+    @GetMapping("")
     public List<Product> getAllProduct(@RequestHeader(value = "group", required = false) String group) {
-        log.info("request header: {}", group);
         return productService.getAllProduct();
+    }
+    
+    @PostMapping("/{productName}")
+    public Product insertProduct(@RequestHeader(value = "group", required = false) String group,
+                                 @PathVariable String productName) {
+        return productService.insertProduct(productName);
     }
 }

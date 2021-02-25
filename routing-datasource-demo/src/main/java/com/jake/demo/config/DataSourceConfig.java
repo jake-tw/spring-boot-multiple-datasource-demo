@@ -5,7 +5,6 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
@@ -31,8 +30,8 @@ public class DataSourceConfig {
     
     @Bean
     @Primary
-    public DataSource routingDataSource(@Qualifier("main") DataSource main, 
-                                        @Qualifier("sub") DataSource sub) {
+    public DataSource routingDataSource(DataSource main, 
+                                        DataSource sub) {
         Map<DataSourceType, DataSource> dataSources = new HashMap<DataSourceType, DataSource>();
         dataSources.put(DataSourceType.MAIN, main);
         dataSources.put(DataSourceType.SUB, sub);

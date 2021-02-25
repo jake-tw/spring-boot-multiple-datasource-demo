@@ -21,13 +21,14 @@ public class DataSourceInterceptor implements HandlerInterceptor {
             throws Exception {
 
         String group = request.getHeader("group");
+        log.info("request header: {}", group);
         if (StringUtils.hasLength(group)) {
             DataSourceContextHolder.setType(DataSourceType.MAIN);
         } else {
             DataSourceContextHolder.setType(DataSourceType.SUB);
         }
-        
-        log.info("after interceptor datasource type: {}", DataSourceContextHolder.getType());
+
+        log.info("interceptor datasource type: {}", DataSourceContextHolder.getType());
 
         return true;
     }

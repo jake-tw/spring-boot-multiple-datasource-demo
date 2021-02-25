@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.jake.demo.entity.Product;
 import com.jake.demo.repository.ProductRepository;
+import com.jake.demo.util.CommonUtil;
 
 @Service
 public class ProductService {
@@ -16,5 +17,12 @@ public class ProductService {
 
     public List<Product> getAllProduct() {
         return productRepository.findAll();
+    }
+
+    public Product insertProduct(String productName) {
+        Product product = new Product();
+        product.setProductId(CommonUtil.getUUID());
+        product.setProductName(productName);
+        return productRepository.save(product);
     }
 }
