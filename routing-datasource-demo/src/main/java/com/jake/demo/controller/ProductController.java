@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.jake.demo.entity.Product;
 import com.jake.demo.service.ProductService;
 
-import lombok.extern.slf4j.Slf4j;
-
 @RestController
 @RequestMapping("/product")
 public class ProductController {
@@ -26,10 +24,10 @@ public class ProductController {
     public List<Product> getAllProduct(@RequestHeader(value = "group", required = false) String group) {
         return productService.getAllProduct();
     }
-    
+
     @PostMapping("/{productName}")
     public Product insertProduct(@RequestHeader(value = "group", required = false) String group,
-                                 @PathVariable String productName) {
+            @PathVariable String productName) {
         return productService.insertProduct(productName);
     }
 }
