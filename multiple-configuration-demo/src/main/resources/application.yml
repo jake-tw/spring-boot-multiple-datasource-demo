@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    customer:
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/test?createDatabaseIfNotExist=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&autoReconnect=true
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    product:
+      jdbc-url: jdbc:mysql://127.0.0.1:3307/test?createDatabaseIfNotExist=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&autoReconnect=true
+      username: root
+      password: 123456 
+      driver-class-name: com.mysql.cj.jdbc.Driver
