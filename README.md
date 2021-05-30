@@ -20,4 +20,19 @@ CREATE TABLE IF NOT EXISTS `product`
     `product_name`    varchar(16),
     PRIMARY KEY (`id`)
 );
+CREATE TABLE IF NOT EXISTS `customer`
+(
+    `id`              int(11) AUTO_INCREMENT,
+    `customer_id`      char(32),
+    `customer_name`    varchar(16),
+    PRIMARY KEY (`id`)
+);
 ```
+
+### 3. Tutorial
+
+- [Multiple configuration](./documents/multiple-configuration.md)
+
+- [Routing datasource](./documents/routing-datasource.md)
+
+- [MySql replication](./documents/mysql-replication.md)
