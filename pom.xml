@@ -15,6 +15,7 @@
     <modules>
         <module>multiple-configuration-demo</module>
         <module>routing-datasource-demo</module>
+        <module>mysql-replication-demo</module>
     </modules>
 
 </project>
