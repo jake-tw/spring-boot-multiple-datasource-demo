@@ -1,5 +1,7 @@
 # MySql Replication
 
+以下內容以 8.0.25 版本的 connector 製作，若使用低版本的 connector 內容與設定會略有不同。
+
 - MySql 的 multi-connection 策略，官方叫 server failover, 在 failover 的基礎上演變而來的則是 loadbalance 和 replication, 分別對應 Cluster 架構和 Replication 架構。
 
 - Java connector url setting
